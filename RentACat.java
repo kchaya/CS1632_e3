@@ -65,9 +65,13 @@ public class RentACat {
     public String listCats(ArrayList<Cat> catList) {
 		String s = "";
 		
+		if(catList == null) {
+			return s;
+		}
+		
 		for(Cat c : catList) {
 			if(!c.getRented()) {
-				s = (s + "ID " + c.getId + ". " + c.getName + "\n");
+				s = (s + c.toString());
 			}
 		}
 		
@@ -85,6 +89,10 @@ public class RentACat {
      */
     
     public boolean catExists(int id, ArrayList<Cat> catList) {
+		if(catList == null) {
+			return false;
+		}
+		
 		for(Cat c : catList) {
 			if(c.getId == id) {
 				return true;
