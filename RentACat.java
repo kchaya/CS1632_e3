@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.lang.StringBuilder;
 
 public class RentACat {
 
@@ -63,19 +64,19 @@ public class RentACat {
      */
     
     public String listCats(ArrayList<Cat> catList) {
-		String s = "";
+		StringBuilder s = new StringBuilder();
 		
 		if(catList == null) {
-			return s;
+			return s.toString();
 		}
 		
 		for(Cat c : catList) {
 			if(!c.getRented()) {
-				s = (s + c.toString());
+				s.append(c.toString()).append("\n");;
 			}
 		}
 		
-		return s;
+		return s.tosting();
     }
 
     /**
@@ -94,7 +95,7 @@ public class RentACat {
 		}
 		
 		for(Cat c : catList) {
-			if(c.getId == id) {
+			if(c.getId() == id) {
 				return true;
 			}
 		}
